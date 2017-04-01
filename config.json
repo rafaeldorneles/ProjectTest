@@ -1,0 +1,14 @@
+
+{
+    "database":
+    {
+        "name": "LeilaoServicos",
+        "host": "localhost",
+        "user": "",
+        "password": "",
+        "port": "27017"
+    },
+    "environment": "development",
+    "port" : 3000,
+    "session": false
+}

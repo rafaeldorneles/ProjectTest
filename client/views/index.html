@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AppModule">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Leilão de Serviços</title>
+
+        <script src="dependencias/angular/angular.min.js" type="text/javascript"></script>
+        <script src="dependencias/angular-route/angular-route.min.js" type="text/javascript"></script>
+        <script src="js/Application.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/AvaliacaoController.js"></script>
+        <script type="text/javascript" src="js/LeilaoController.js"></script>
+        <script type="text/javascript" src="js/LanceController.js"></script>
+        <script type="text/javascript" src="js/PessoaController.js"></script>
+        <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+        <script type="text/javascript" src="js/mask.js"></script>
+
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="dependencias/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="shortcut icon" href="img/favicon-martelo.png">
+
+    </head>
+    <body>
+        <!-- Cabeçalho -->
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top" id="cabecalho">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <a href="#/"><img src="img/logo-cabecalho.svg" id="logoCab"></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Páginas -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="conteudo">
+            <div ng-view></div>
+        </div>
+        <!-- Rodapé -->
+        <div class="navbar navbar-fixed-bottom" role="navigation" id="rodape">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a class="btn btn-default"><span class="glyphicon glyphicon-menu-hamburger"></span> MENU</a>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav nav-justified">
+                        <li>
+                            <!--<a href="#/" id="btnTXT"><img src="img/home.svg" id="menuIcon">  Home</a>-->
+                             <a href="#/"   id="btnTXT"  ><i class="fa fa-home"   style="font-size:24px ;color:orange"    aria-hidden="true"></i>  Home</a>
+
+                        </li>
+                        <li>
+                            <a href="#/perfil" id="btnTXT"><img src="img/user.svg" id="menuIcon">  Perfil</a>
+                        </li>
+                        <li>
+                            <a href="#/leiloes-leiloes" id="btnTXT"><img src="img/meus-leiloes.svg" id="menuIcon">  Meus Leilões</a>
+                        </li>
+                        <li>
+                            <a href="#/meus-lances" id="btnTXT"><img src="img/meus-lances.svg" id="menuIcon">  Meus Lances</a>
+                        </li>
+                        <li>
+                            <a href="#/leiloes-abertos" id="btnTXT"><img src="img/leiloes-abertos.svg" id="menuIcon">  Leilões Abertos</a>
+                        </li>
+                        <li>
+                            <a href="#/leilao-novo" id="btnTXT"><img src="img/new-file.svg" id="menuIcon">  Leilão Novo</a>
+                        </li>
+                        <li>
+                            <a href="#/sobre" id="btnTXT"><img src="img/info.svg" id="menuIcon">  Sobre</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="dependencias/jquery/dist/jquery.min.js"></script>
+        <script src="dependencias/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).on('click', '.navbar-collapse.in', function (e) {
+                if ($(e.target).is('a')) {
+                    $(this).collapse('hide');
+                }
+            });
+        </script>
+
+    </body>
+
+</html>

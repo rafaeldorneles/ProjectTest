@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/04/2016, 10:13:41
+    Author     : allis
+*/
+
+
+.row{
+    margin: 0;
+    padding: 0;
+}
+
+#conteudo{
+    padding-top: 50px;
+    padding-bottom: 75px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0;
+}
+
+#rodape{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background-color: black;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#cabecalho{
+    background-color: black;
+    color: white;
+    margin: 0px;
+    border: 0px;
+}
+
+#menuIcon{
+    width: 25px;
+}
+
+#logoCab{
+    padding-top: 5px;
+    width: 140px;
+}
+
+#btnTXT{
+    font-size: 14px;
+    color: white;
+    text-align: left;
+}
+
+#btnTXT:hover{
+    color: orange;
+    font-size:125%;
+}
+
+#cabPag{
+    background-color: #96CDCD;
+    color: white;
+}
+
+h3,h1{
+    margin: 10px;
+    text-align: center;
+}
+
+#btnRespons{
+    color: black;
+    background-color: orange;
+    border: 0px;
+}
+
+*{
+    font-family: helvetica;
+}
+
+#form_login{
+                background-color: #ffffff; 
+                width: 400px; 
+                height: 150px; 
+                left: 35%;
+                position: absolute; 
+                top: 50%;
+                text-align: center;
+}
+
+#logout{
+    color: #d75a4a;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+
+#login{
+    color: #91dc5a;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+
+#logon{
+    color: #006df0;
+    padding-right: 15px;
+    padding-top: 10px;
+}

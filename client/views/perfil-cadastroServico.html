@@ -1,0 +1,81 @@
+
+<!-- Cabeçalho da Janela -->
+
+<div class="row" style="background-color: gray">
+    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <h1 style="text-align: center">Meu perfil</h1>
+    </div>
+</div>
+
+
+<!--aqui tem que vincular a categoria seleciona com o a escolha -->
+        <h1 class="md-title">Selecione uma categoria de serviço </h1>
+
+        <select>
+  <option ng-repeat="(key, value) in categoria_Servico | filter:pesquisa">{{value.nome}}  </option>
+  
+</select>
+        
+        <!--
+        <div class="dropdown">
+        
+            <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Categorias
+                <span class="caret"></span>
+
+                
+            </button>
+            <ul class ="dropdown-menu"
+            
+                <li > <a ng-repeat="(key, value) in categoria_Servico | filter:pesquisa"> {{value.nome}}     </a></li>
+            
+
+
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Link separado</a></li>
+            </ul>
+        </div>
+      
+ -->
+     
+        <div class="form-group">
+            <label for="descricao">
+                Informaçãoes adicionais 
+            </label>
+            <div>
+                <textarea ng-model="pessoa.descricao" class="form-control" rows="2" id="descServ" placeholder="Informações adicioanis"></textarea>
+            </div>
+
+
+            <!-- Botões -->
+            <div class="row">
+                </br>
+                <button type="button" ng-click="salvar()" class="btn btn-success"><span class="glyphicon glyphicon-save"></span>Salvar</button>
+                <a class="btn btn-danger" href="#/perfil" role="button"><span class="glyphicon glyphicon-menu-left"></span>Cancelar</a>
+            </div>
+
+            
+            
+      
+	
+        
+            
+
+            <!-- tentativa com agular 
+            <div ng-controller="LeilaoController" class="md-padding" ng-cloak>
+                <div>
+                    <h1 class="md-title">Selecione uma categoria </h1>
+                    <div class="row">
+                        <md-input-container>
+                            <label>Items</label>
+                            <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
+                                <md-optgroup label="items">
+                                    <md-option ng-value="item" ng-repeat="item in items">Item {{item}}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+            
+        </body>-->

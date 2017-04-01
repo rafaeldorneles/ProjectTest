@@ -1,0 +1,28 @@
+<<<<<<< Upstream, based on origin/master
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/Leil-oSelf5/client/js/LeilaoController.js</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/Leil-oSelf5/client/js/LanceController.js</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/Leil-oSelf5/src/model/bean/Leilao.js</file>
+            <file>file:/C:/Users/Dell/Documents/NetBeansProjects/Leil-oSelf5/client/views/leiloes-abertos.html</file>
+        </group>
+    </open-files>
+</project-private>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Use/Documents/NetBeansProjects1124567/Leil-oSelf/client/views/index.html</file>
+            <file>file:/C:/Users/Use/Documents/NetBeansProjects1124567/Leil-oSelf/App.js</file>
+            <file>file:/C:/Users/Use/Documents/NetBeansProjects1124567/Leil-oSelf/client/views/perfil.html</file>
+            <file>file:/C:/Users/Use/Documents/NetBeansProjects1124567/Leil-oSelf/client/js/PessoaController.js</file>
+            <file>file:/C:/Users/Use/Documents/NetBeansProjects1124567/Leil-oSelf/client/views/logon/cadastro.html</file>
+        </group>
+    </open-files>
+</project-private>
+>>>>>>> 33825a3 

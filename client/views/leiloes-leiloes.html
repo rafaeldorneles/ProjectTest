@@ -1,0 +1,178 @@
+<div class="row" ng-hide="informacoes">
+    <!-- Cabeçalho da Janela -->
+    <div class="row" id="cabPag">
+        <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+            <h1 style="text-align: center">Meus Leilões</h1>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <form style="padding-top: 10px;">
+            <div class="form-inline">
+
+            </div>
+        </form>		
+        <hr>		
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <table class="table table-striped table-hover" ng-init="listarPorDono()">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(key, value) in lista">
+                    <td>{{opCategorias.find(value.categoria).text}}</td>
+                    <td>{{value.descricao}}</td>
+                    <td ng-show="value.encerrado == false">Aberto</td>
+                    <td ng-show="value.encerrado == true">Encerrado</td>
+                    <th>
+                        <button type="button" ng-click="setInfo(value)" class="btn btn-sm btn-primary" alt="Editar" title="Editar">
+                            <span class="glyphicon glyphicon-plus-sign"></span> Informações
+                        </button>
+                        <button type="button" ng-click="encerrar(value.id)" class="btn btn-sm btn-primary" ng-show="value.encerrado == false" alt="Editar" title="Editar">
+                            <span class="glyphicon glyphicon-bell"></span> Encerrar
+                        </button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row" ng-show="informacoes">
+    <div class="row" id="cabPag">
+        <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+            <h1 style="text-align: center">Meus Leilões</h1>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <form role="form" style="padding-top: 10px;">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="categoria">
+                            Categoria
+                        </label>
+                        <select ng-model="leilao.categoria" class="form-control" id="categoria" disabled>
+                            <option ng-repeat="cat in opCategorias" ng-selected="leilao.categoria == cat.value" value="{{cat.value}}">{{cat.text}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                        <label for="data_exec">
+                            Data de Inicio
+                        </label>
+                        <input type="text" ng-model="leilao.dataHoraInicio" class="form-control" id="data_exec" mask="99/99/9999 99:99:99" readonly="true"/>                        
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                        <label for="data_exec">
+                            Data da Execução
+                        </label>
+                        <input type="text" ng-model="leilao.dataHoraExecucao" class="form-control" id="data_exec" readonly="true"/>                        
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                        <label for="data_limite">
+                            Data Limite dos Lances
+                        </label>
+                        <input type="text" ng-model="leilao.dataHoraFinal" class="form-control" id="data_limite" readonly="true"/>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="descricao">
+                            Descrição do Serviço
+                        </label>
+                        <textarea ng-model="leilao.descricao" class="form-control" rows="5" id="descServ" readonly="true"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Logradouro
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.logradouro" class="form-control" id="end_rua" placeholder="Ex.: Rua Exemplo" readonly="true"/>
+                    </div>
+                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Numero
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.numero" class="form-control" id="end_rua" placeholder="Ex.: xxx" readonly="true"/>
+                    </div>
+                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Complemento
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.complemento" class="form-control" id="end_rua" placeholder="Ex.: AP XX" readonly="true"/>
+                    </div>
+                    <div class=" col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Cidade
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.cidade" class="form-control" id="end_rua" placeholder="Ex.: São Paulo" readonly="true"/>
+                    </div>
+                    <div class=" col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            UF
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.uf" class="form-control" id="end_rua" placeholder="Ex.: SP" readonly="true"/>
+                    </div>
+                    <div class=" col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            CEP
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.cep" class="form-control" id="end_rua" mask="999.999-99" placeholder="Ex.: 000.000-00" readonly="true"/>
+                    </div>
+                    <div class=" col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Observacao
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.Observacao" class="form-control" id="end_rua" placeholder="Ex.: Deve ter tal coisa" readonly="true"/>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+                <div class="row" ng-show="leilao.encerrado == true">
+                    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Vencedor
+                        </label>
+                        <input type="text" ng-model="leilao.vencedor.interessado.nome" class="form-control" id="end_rua" readonly/>
+                    </div>
+                    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <label for="end_rua">
+                            Valor
+                        </label>
+                        <input type="text" ng-model="leilao.vencedor.valor" class="form-control" id="end_rua" readonly/>
+                </div>
+                </div>
+                
+            <div class="row" style="padding-top:10px;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <button type="button" ng-click="removeInfo()" class="btn btn-warning"><span class="glyphicon glyphicon-menu-left"></span> Voltar</button>
+                </div>
+            </div>
+                
+                
+            </div> 
+        
+        </form>
+
+    </div>
+</div>

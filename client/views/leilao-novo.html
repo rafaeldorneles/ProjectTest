@@ -1,0 +1,125 @@
+
+<!-- Cabeçalho da Janela -->
+<div class="row" id="cabPag">
+    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <h1 style="text-align: center">Novo Leilão</h1>
+    </div>
+</div>
+
+<div class="container col-xs-12 col-lg-12 col-md-12 col-sm-12" style="margin-top: 10px;">
+    <div class="row">
+        <!-- Formulário -->
+        <form role="form" method="POST">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="categoria">
+                            Categoria
+                        </label>
+                        <select ng-model="leilao.categoria" class="form-control" id="categoria">
+                            <option ng-repeat="cat in opCategorias" value="{{cat.value}}">{{cat.text}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="data_inic">
+                            Data de Inicio
+                        </label>
+                        <input type="text" ng-model="leilao.dataHoraInicio" class="form-control" id="data_inic" data-mask="99/99/9999 99:99:99" placeholder="Ex.: XX/XX/XXXX XX:XX:XX"/>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="data_exec">
+                            Data da Execução
+                        </label>
+
+                        <input type="text" ng-model="leilao.dataHoraExecucao" class="form-control" data-mask="99/99/9999 99:99:99" id="data_exec" placeholder="Ex.: XX/XX/XXXX XX:XX:XX"/>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="data_limite">
+                            Data Limite dos Lances
+                        </label>
+                        <input type="text"  ng-model="leilao.dataHoraFinal" data-mask="99/99/9999 99:99:99" class="form-control" id="data_limite" placeholder="Ex.: XX/XX/XXXX XX:XX:XX"/>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="descricao">
+                            Descrição do Serviço
+                        </label>
+                        <textarea ng-model="leilao.descricao" class="form-control" rows="5" id="descServ" placeholder="Informe aqui a descrição do seu serviço"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Logradouro
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.logradouro" class="form-control" id="end_rua" placeholder="Ex.: Rua Exemplo"/>
+                    </div>
+                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Numero
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.numero" class="form-control" id="end_rua" placeholder="Ex.: xxx"/>
+                    </div>
+                    <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Complemento
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.complemento" class="form-control" id="end_rua" placeholder="Ex.: AP XX"/>
+                    </div>
+                    <div class=" col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Cidade
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.cidade" class="form-control" id="end_rua" placeholder="Ex.: São Paulo"/>
+                    </div>
+                    <div class=" col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            UF
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.uf" class="form-control" id="end_rua" placeholder="Ex.: SP"/>
+                    </div>
+                    <div class=" col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            CEP
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.cep" class="form-control" id="end_rua" mask="999.999-99" placeholder="Ex.: 000.000-00"/>
+                    </div>
+                    <div class=" col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Observacao
+                        </label>
+                        <input type="text" ng-model="leilao.endereco.Observacao" class="form-control" id="end_rua" placeholder="Ex.: Deve ter tal coisa"/>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Botões -->
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button type="button" ng-click="cadastrar(leilao)" class="btn btn-success"><span class="glyphicon glyphicon-save"></span>Salvar</button>
+                        <a class="btn btn-danger" href="#/leiloes-abertos" role="button"><span class="glyphicon glyphicon-menu-left"></span>Cancelar</a>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

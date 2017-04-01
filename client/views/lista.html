@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="AngApplication">
+
+	<head>
+		<title>Lista</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="./../js/angular.min.js"></script>
+        <script type="text/javascript" src="./../js/LeilaoController.js"></script>
+	</head>
+	<body>
+		<div ng-controller="LeilaoController">
+			<div  ng-init="listar()" >
+				<table>
+					<thead>
+						<tr>
+							<th><label>Dono</label></th>
+							<th><label>Categoria</label></th>
+							<th><label>Descricao</label></th>
+							<th><label>Data Inicio</label></th>
+							<th><label>Data Final</label></th>
+							<th><label>Data Execucao</label></th>
+							<th><label>Endereço</label></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="leilaoLista in lista">
+							<td><input ng-disabled="" type="text" ng-model="leilaoLista.dono"></td>
+							<td><input type="text" ng-model="leilaoLista.categoria"></td>
+							<td><input type="text" ng-model="leilaoLista.descricao"></td>
+							<td><input type="text" ng-model="leilaoLista.dataHoraInicio"></td>
+							<td><input type="text" ng-model="leilaoLista.dataHoraFinal"></td>
+							<td><input type="text" ng-model="leilaoLista.dataHoraExecucao"></td>
+							<td><input type="text" ng-model="leilaoLista.endereco"></td>
+							<td><button ng-click="editar(leilaoLista)">Editar</button></td>
+							<td><button ng-click="deletar(leilaoLista, lista);">Deletar</button></td>
+							<input type="hidden" ng-model="editing" id="leilaoList.id" value="false">
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "leilao-servicos",
+  "version": "1.0.0",
+  "description": "Web service to interact with interface for services auction.",
+  "main": "App.js",
+  "constributors": [
+  
+    {
+      "name": "Rafael",
+      "email": "rafael.bke@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaeldorneles/Leil-oSelf"
+  },
+  "bugs": {    
+    "email": "rafael.bke@gmail.com"
+  },
+  "dependencies": {
+    "body-parser": "1.15.*",
+    "express": "4.13.*",
+    "mongodb": "2.1.*",
+    "cookie-parser": "~1.0.*",
+    "express-session": "~1.0.*"
+  },
+  "devDependencies": {},
+  "private": true,
+  "scripts": {}
+}

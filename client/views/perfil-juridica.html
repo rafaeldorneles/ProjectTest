@@ -1,0 +1,68 @@
+<!-- Cabeçalho da Janela -->
+<div class="row" id="cabPag">
+    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <h1 style="text-align: center">Perfil Pessoa Jurídica</h1>
+    </div>
+</div>
+
+<div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+    <div class="row">
+        <form role="form" method="POST">
+            <div class="form-group">
+                <div class="row" ng-init="buscar();">
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <label for="pessoa">
+                            Fisico / Júridico <br>
+                        </label>
+                        <div>
+                            <input type="radio" name="op" id="op1" onclick="location.href = '#/perfil'"> Física
+                            <input type="radio" name="op" id="op2" checked onclick="location.href = '#/perfil-juridica'"> Jurídica
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <label for="nome">
+                            Nome da Empresa
+                        </label>
+                        <input  type="text"  ng-model="busca.nome" class="form-control" id="pessoa_nome" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="username">
+                            Username
+                        </label>
+                        <input type="text" ng-model="busca.username" class="form-control" id="username"/>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="cnpj">
+                            CNPJ
+                        </label>
+                        <input type="text" ng-model="busca.cnpj" class="form-control" id="cnpj"/>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="fundacao">
+                            Data de Fundação
+                        </label>
+                        <input type="text" ng-model="busca.dataNascimento" class="form-control" id="fundacao"/>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="telefone">
+                            Telefone
+                        </label>
+                        <input type="text" ng-model="busca.telefones" class="form-control" id="telefone"/>
+                    </div>
+                </div>
+            </div>
+            
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <button type="button" ng-click="editar(busca)" class="btn btn-sm btn-default" alt="Editar" title="Editar">
+                    <span class="glyphicon glyphicon-edit"></span> Editar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

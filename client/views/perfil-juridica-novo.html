@@ -1,0 +1,102 @@
+
+<!-- Cabeçalho da Janela -->
+<div class="row" id="cabPag">
+    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <h1 style="text-align: center">Cadastro de Pessoa Jurídica</h1>
+    </div>
+</div>
+
+<div class="container col-xs-12 col-lg-12 col-md-12 col-sm-12" style="margin-top: 10px;">
+    <div class="row">
+        <!-- Formulário -->
+        <form role="form" method="POST">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <label for="pessoa">
+                            Pessoa <br>
+                        </label>
+                        <div>
+                            <input type="radio" name="op" id="op1" onclick="location.href = '#/perfil-novo'"> Física 
+                            <input type="radio" name="op" id="op2" checked onclick="location.href = '#/perfil-juridica-novo'"> Jurídica
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <label for="nome">
+                            Razão Social
+                        </label>
+                        <input  type="text"  ng-model="pessoa.nome" class="form-control" id="pessoa_nome" placeholder="Ex. Exemplo LTDA."/>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="cnpj">
+                            CNPJ
+                        </label>
+                        <input type="text" ng-model="pessoa.cnpj" mask="99.999.999/9999-99" clean="true" class="form-control" id="cnpj" placeholder="Ex. 99.999.999/9999-99"/>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="dataNascimento">
+                            Data de Fundação
+                        </label>
+                        <input type="text" ng-model="pessoa.dataNascimento" mask="99/99/9999" clean="true" class="form-control" id="dataNascimento" placeholder="Ex. 29/06/2016"/>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="email">
+                            Email
+                        </label>
+                        <input type="text" ng-model="pessoa.email" class="form-control" id="email" placeholder="Ex. exemplo@exemplo.com.br"/>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="telefones">
+                            Telefone
+                        </label>
+                        <input type="text" ng-model="pessoa.telefones" mask="(99) 9999-9999" clean="true" class="form-control" id="telefones" placeholder="Ex. (99) 9999-9999"/>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="username">
+                            Username
+                        </label>
+                        <input type="text" ng-model="pessoa.username" class="form-control" id="username" placeholder="nunes"/>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="senha">
+                            Senha
+                        </label>
+                        <input type="password" ng-model="pessoa.senha" class="form-control" id="senha"/>
+                    </div>
+                    <div class="row">
+                        <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label for="end_rua">
+                                Confirmação senha
+                            </label>
+                            <input type="password" ng-model="pessoa.confirmaSenha" class="form-control" id="confirmaSenha" placeholder="Repita sua senha"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botões -->
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button type="button" ng-click="cadastrar(pessoa)" class="btn btn-success"><span class="glyphicon glyphicon-save"></span>Salvar</button>
+                        <a class="btn btn-danger" href="#/" role="button"><span class="glyphicon glyphicon-menu-left"></span>Cancelar</a>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

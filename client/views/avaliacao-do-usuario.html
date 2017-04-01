@@ -1,0 +1,79 @@
+
+<!-- Cabeçalho da Janela -->
+<div class="row" id="cabPag">
+    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <h1 style="text-align: center">Avaliação do usuario</h1>
+    </div>
+</div>
+
+
+
+   
+<div class="container col-xs-12 col-lg-12 col-md-12 col-sm-12 text-center">
+    <table class="container col-xs-1 col-lg-12 col-md-12 col-sm-12 text-center"> 
+       <td><h1 style="text-align: left">Pontos:</h1> </td>
+            
+        <td> <img src="img/ator.jpg"   height="200" width="300" id="logoUser">    </td>
+    
+        <td><h1 style="text-align: left">Valor Lance:</h1> </td>
+    </table>
+</div>
+    
+
+
+
+<div class="container col-xs-12 col-lg-12 col-md-12 col-sm-12 text-center"  style="margin: 10px;">
+    <div class="row">
+        <!-- Formulário -->
+        <form role="form" method="POST">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6t text-center" ng-init="listarAvaliados();">
+                        <label for="nota">
+                           Avaliação do Usuario
+                        </label>
+                        <select ng-model="avaliacao.nota" class="form-control" id="nota">
+                            <option ng-repeat="cat in opNota" value="{{cat.value}}">{{cat.text}}</option>
+                        </select>
+                        <label for="avaliado">
+                            Usuario Avaliado
+                            
+                        </label>
+                        <select ng-model="avaliacao.avaliado" class="form-control" id="nota">
+                            <option ng-repeat="nome in listaAvaliados" value="{{nome}}">{{nome.nome}}</option>
+                        </select>
+                        
+                    </div>
+                </div>
+            </div>     
+
+            <div class="form-group">
+                <div class="row">
+                    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="descricao">
+                            Deixe um Comentario
+                        </label>
+                        <textarea ng-model="avaliacao.descricao" class="form-control" rows="5" id="descServ" placeholder="Informe aqui a descrição do seu serviço"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            
+
+            <!-- Botões -->
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button type="button" ng-click="cadastrarAvaliacao(avaliacao)" class="btn btn-success"><span class="glyphicon glyphicon-save"></span>Salvar</button>
+                        <a class="btn btn-danger" href="#/leiloes-abertos" role="button"><span class="glyphicon glyphicon-menu-left"></span>Cancelar</a>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

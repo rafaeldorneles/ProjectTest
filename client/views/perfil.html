@@ -1,0 +1,83 @@
+<!-- Cabeçalho da Janela -->
+<div class="row" id="cabPag">
+    <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <h1 style="text-align: center">Perfil</h1>
+    </div>
+</div>
+  <script type="text/javascript" src="js/PessoaController.js"></script>
+
+<div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+    <div class="row" >
+        <form role="form" method="POST" >
+            <div class="form-group">
+                <div class="row" ng-init="buscar();">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="nome">
+                            Nome
+                        </label>
+                        <input  type="text" ng-model="busca.nome" class="form-control" id="pessoa_nome" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <label for="cpf">
+                        CPF
+                    </label>
+                    <input type="text" ng-model="busca.cpf" mask="999.999.999-99" clean="true" class="form-control" id="cpf"/>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <label for="nascimento">
+                        Data de Nascimento
+                    </label>
+                    <input type="text" ng-model="busca.dataNascimento" mask="99/99/9999" clean="true" class="form-control" id="nascimento"/>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <label for="telefone">
+                        Telefone
+                    </label>
+                    <input type="text" ng-model="busca.telefones" mask="(99) 9999-9999" clean="true" class="form-control" id="telefone"/>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <label for="email">
+                        email
+                    </label>
+                    <input type="text" ng-model="busca.email" class="form-control" id="email"/>
+                </div>
+            </div>
+<!--
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="username">
+                            Username
+                       
+                        </label>
+                        <input type="text" ng-model="busca.username" class="form-control" id="username"/>
+                       -->
+                    </div>
+                    
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                        <label for="senha">
+                            Senha
+                        </label>
+                        <input type="password" ng-model="busca.senha" class="form-control" id="senha"/>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <button type="button" ng-click="editar(busca)" class="btn btn-sm btn-default" alt="Editar" title="Editar">
+                    <span class="glyphicon glyphicon-edit"></span> Editar
+                    
+                         
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
