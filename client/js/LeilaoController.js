@@ -293,6 +293,19 @@ app.controller('LeilaoController', function ($scope, $http, $rootScope)
                 {value: 14, text: "Serviços de Manutenção Predial"},
                 {value: 5555, text: "Serviços de Diversos (Outros)"}
             ];
+            
+            
+            $scope.opTempoDuracaoLeilao =
+    [           {value: 14400, text: "4 horas"},
+                {value: 28800, text: "8 horas "},
+                {value: 43200, text: "12 horas"},
+                {value: 86400, text: "1 dia"},
+                {value: 172800, text: "2 dias"},
+                {value: 345600, text: "4 dias"},
+                {value: 691200, text: "8 dias"},
+                {value: 1382400, text: "16 dias"}
+                 
+            ];
 
     $scope.opCategorias.find = function (id)
     {

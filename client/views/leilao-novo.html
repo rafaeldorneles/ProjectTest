@@ -42,10 +42,15 @@
 
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <label for="data_limite">
-                            Data Limite dos Lances
+                            Tempo de duração do leilão.
                         </label>
-                        <input type="text"  ng-model="leilao.dataHoraFinal" data-mask="99/99/9999 99:99:99" class="form-control" id="data_limite" placeholder="Ex.: XX/XX/XXXX XX:XX:XX"/>
-                    </div>
+                        
+                        <select ng-model="leilao.dataHoraFinal" class="form-control" id="categoria">
+                            <option ng-repeat="cat in opTempoDuracaoLeilao" value="{{cat.value}}">{{cat.text}}</option>
+                            <!-- Aqui foi trocado a data final por um intervalo de tempo de duração-->
+                        <!--<input type="text"  ng-model="leilao.dataHoraFinal" data-mask="99/99/9999 99:99:99" class="form-control" id="data_limite" placeholder="Ex.: XX/XX/XXXX XX:XX:XX"/>-->
+                         </select>
+                        </div>
 
                 </div>
             </div>
