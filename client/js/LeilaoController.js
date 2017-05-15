@@ -27,6 +27,27 @@ app.controller('LeilaoController', function ($scope, $http, $rootScope)
 
     };
 
+/*
+    $scope.listarLancesAbertos = function()
+    {        
+        function sucessHandler(response)
+        {
+            $scope.listaLancesAbertos = response.data.lista;
+        }
+
+        var config =
+                {
+                    method: "GET",
+                    timeout: 10000,
+                    responseType: "json",
+                    url: "/lances/lancesAbertos/" + $scope.leilao.id, // "5917a1c84e5ec4841247e9b3", //$scope.leilao.id,
+                    cache: false
+                };
+
+        $http(config).then(sucessHandler, errorHandler);        
+    };
+    */
+
     $scope.listar = function ()
     {
 
@@ -64,7 +85,6 @@ app.controller('LeilaoController', function ($scope, $http, $rootScope)
                 };
 
         $http(config).then(sucessHandler, errorHandler);
-
     }
     
     $scope.listarAbertos = function ()
@@ -180,7 +200,26 @@ app.controller('LeilaoController', function ($scope, $http, $rootScope)
 	$scope.setInfo = function(leilao)
 	{
 		$scope.informacoes = true;
-		$scope.leilao = angular.copy(leilao)
+		$scope.leilao = angular.copy(leilao);
+                
+                //CARREGA LANCES DO LEILAO
+                function sucessHandler(response)
+                {
+                    console.log(response);
+                   
+                    $scope.listaLancesAbertos = response.data.lista;
+                }
+                
+                var config =
+                        {
+                            method: "GET",
+                            timeout: 10000,
+                            responseType: "json",
+                            url: "/lances/lancesAbertos/" + $scope.leilao.id,
+                            cache: false
+                        };
+
+                $http(config).then(sucessHandler, errorHandler);                   
 	};
 	
 	$scope.encerrar = function (id)
@@ -274,6 +313,24 @@ app.controller('LeilaoController', function ($scope, $http, $rootScope)
 
 		}
 		});
+    };
+
+var n = 10;
+    $scope.contador = function (n,status)
+    {
+        function countDown(secs, elem) {
+            var element = document.getElementById(elem);
+            element.innerHTML = "Please wait for " + secs + " seconds";
+            if (secs < 1) {
+                clearTimeout(timer);
+                element.innerHTML = '<h2>Countdown Complete!</h2>';
+                element.innerHTML += '<a href="#">Click here now</a>';
+            }
+            secs--;
+              
+            var timer = setTimeout('countDown(' + secs + ',"' + elem + '")', 1000);
+        }
+   
     };
 
     $scope.opCategorias =

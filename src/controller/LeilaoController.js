@@ -132,7 +132,6 @@ module.exports = function (router)
         //Declaração de objetos e recepção de dados do request
         var rn = new LeilaoRN();
         var dao = new LeilaoDAO();
-        var leilao = new Leilao();
         var id = request.params.id;
         
 		//Execução do método que busca pelo id

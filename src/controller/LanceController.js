@@ -35,6 +35,27 @@ module.exports = function (router)
 
     });
 
+    //MEU
+    router.get("/lances/lancesAbertos/:id", function(request, response) 
+    {
+        //Declaração de objetos
+        var rn = new LanceRN();
+        var dao = new LanceDAO();
+
+        var id = request.params.id;
+
+        rn.listarLancesAbertos(id, dao, function(err, lista)
+        {  
+            if (err)
+            {
+                errorHandler(err, response);
+            } else
+            {
+                response.status(200).send({lista: lista});
+            }
+        });
+    });
+
     //Método de Listagem
     router.get('/lances', function (request, response)
     {

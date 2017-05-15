@@ -14,6 +14,12 @@
             </div>
         </form>		
     </div>
+    
+    
+
+
+<div id="status"></div>
+<script>countDown(10,"status");</script>
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
@@ -82,6 +88,7 @@
                         <label for="data_exec">
                             Data da Execução
                         </label>
+                        
                         <input type="text" ng-model="leilao.dataHoraExecucao" class="form-control" id="data_exec" readonly="true"/>                        
                     </div>
 
@@ -89,7 +96,12 @@
                         <label for="data_limite">
                             Data Limite dos Lances
                         </label>
-                        <input type="text" ng-model="leilao.dataHoraFinal" class="form-control" id="data_limite" readonly="true"/>                        
+                           
+
+                        
+                        <input type="text" ng-model="leilao.dataHoraFinal" class="form-control" id="data_limite" readonly="true"/>
+                        <button type="button" ng-click="contador(dataHoraFinal)" class="btn btn-warning"><span class="glyphicon glyphicon-menu-left"></span> Contador</button>   
+                        countDown
                     </div>
 
                 </div>
@@ -177,7 +189,7 @@
                     <label for="valor_lance">
                         Informe o valor do Lance
                     </label>
-                    <input type="text" ng-model="lance.valor" class="form-control" id="valor_lance" placeholder="Ex.: 300,00"/>
+                    <input type="text" mask="R$999.999,99" ng-model="lance.valor" class="form-control" id="valor_lance" placeholder="Ex.: 300,00"/>
                 </form>
             </div>
             <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px;">

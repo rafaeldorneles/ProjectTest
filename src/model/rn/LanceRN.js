@@ -27,6 +27,18 @@ method.cadastrar = function (session, lance, dao, callback)
 
 };
 
+method.listarLancesAbertos = function (idLeilao, dao, callback) {    
+    dao.buscarPorLeilao(idLeilao, function(err, lances) {
+        if (callback)
+            callback(err, lances);
+        else
+        {
+            if (err)
+                throw err;
+        }
+    });
+}
+
 method.getWinner = function (idLeilao, dao, callback)
 {
     var moneyImportance = 0.3; //Quanto menor, mais importante 
