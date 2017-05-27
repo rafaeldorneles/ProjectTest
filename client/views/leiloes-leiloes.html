@@ -31,10 +31,10 @@
                     <td ng-show="value.encerrado == false">Aberto</td>
                     <td ng-show="value.encerrado == true">Encerrado</td>
                     <th>
-                        <button type="button" ng-click="setInfo(value)" class="btn btn-sm btn-primary" alt="Editar" title="Editar">
+                        <button type="button" ng-click="setInfo(value)" class="btn btn-sm btn-primary" alt="Expandir" title="Expandir">
                             <span class="glyphicon glyphicon-plus-sign"></span> Informações
                         </button>
-                        <button type="button" ng-click="encerrar(value.id)" class="btn btn-sm btn-primary" ng-show="value.encerrado == false" alt="Editar" title="Editar">
+                        <button type="button" ng-click="encerrar(value.id)" class="btn btn-sm btn-primary" ng-show="value.encerrado == false" alt="Encerrar Leilão" title="Encerrar Leilão">
                             <span class="glyphicon glyphicon-bell"></span> Encerrar
                         </button>
                     </th>
@@ -148,24 +148,69 @@
             </div>
             
             
+            <!-- tentando Ng-hide  
+            
+            <div class="row" ng-hide="vencedor">
+                      </div>
+    </div>
+             <div class="row" ng-show="vencedor">
+    -->
+ 
+   
+
+     
+     
+
+            
+               
+            <!--
+            <button type="button" ng-click="removeInfo()" class="btn btn-success"><span class="glyphicon glyphicon-user"></span> Ver perfil Vencedor</button>
+            -->
+           
+                
                 <div class="row" ng-show="leilao.encerrado == true">
-                    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <button type="button" ng-click="vencedor" class="btn btn-sm btn-danger " alt="Press Check" title="Press Check">
+                            <span class="glyphicon glyphicon-resize-full"></span>   
+                            
+                            <input type="checkbox" ng-model="vencedor"><b><font size="3">   Mostrar Dados do Vencedor  </font> </b> 
+     
+
+    <div ng-show="vencedor">
+     
+                    <div class="  col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="end_rua">
                             Vencedor
                         </label>
                         <input type="text" ng-model="leilao.vencedor.interessado.nome" class="form-control" id="end_rua" readonly/>
                     </div>
                     <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            E-Mail
+                        </label>
+                        <input type="text" ng-model="leilao.vencedor.interessado.email" class="form-control" id="end_rua" readonly/>
+                    </div>
+                     <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="end_rua">
+                            Telefone
+                        </label>
+                        <input type="text" ng-model="leilao.vencedor.interessado.telefones" class="form-control" id="end_rua" readonly/>
+                    </div>
+                    <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <label for="end_rua">
-                            Valor
+                            Valor do lance
                         </label>
                         <input type="text" ng-model="leilao.vencedor.valor" class="form-control" id="end_rua" readonly/>
                 </div>
                 </div>
+ 
+                   </div>
+                
+                
+                
                 
             <div class="row" style="padding-top:10px;">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <button type="button" ng-click="removeInfo()" class="btn btn-success"><span class="glyphicon glyphicon-user"></span> Ver perfil Vencedor</button>
+                    
                     <button type="button" ng-click="removeInfo()" class="btn btn-warning"><span class="glyphicon glyphicon-menu-left"></span> Voltar</button>
                 </div>
             </div>
