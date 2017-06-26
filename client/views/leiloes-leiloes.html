@@ -212,14 +212,14 @@
              
     </div>
     
-    <div  class="row" align="center" ng-show="leilao.encerrado == true" >
+    <div  class="row"  ng-show="leilao.encerrado == true" >
         
         
 
-                  <!--    <button type="button" ng-click="vencedor"  class="btn btn-sm btn-danger " alt="Press Check" title="Press Check"> -->
+                  <button type="button" ng-click="vencedor"  class="btn btn-sm btn-danger " alt="Press Check" title="Press Check"> 
                             <span  style="font-size: 250%" class="glyphicon glyphicon-resize-full"></span>   
                             
-                            <input  style="width:150px; height:20px;background-color:greenyellow; " type="checkbox"  ng-model="vencedor"><b><font size="5" color="red">  Mostrar Dados do Vencedor  </font> </b> 
+                            <input  style="width:150px; height:20px;background-color:greenyellow; " type="checkbox"  ng-model="vencedor"><b><font size="6">  Mostrar Dados do Vencedor <br> </font> </b> 
      
 
     <div  style="background-color:black; " ng-show="vencedor">
@@ -228,30 +228,30 @@
                 
       
             
-        <div style="background-color:#6699ff;" class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div  class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="end_rua">
                             Vencedor
                         </label>
                         <input type="text" ng-model="leilao.vencedor.interessado.nome" class="form-control" id="end_rua" readonly/>
                     </div>
-                   <div style="background-color:#6699ff;" class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <div  class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="end_rua">
                             E-Mail
                         </label>
                         <input type="text" ng-model="leilao.vencedor.interessado.email" class="form-control" id="end_rua" readonly/>
                     </div>
-                   <div style="background-color:#6699ff;" class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <div  class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="end_rua">
                             Telefone
                         </label>
                         <input type="text" ng-model="leilao.vencedor.interessado.telefones" class="form-control" id="end_rua" readonly/>
                     </div>
-                    <div style="background-color:#6699ff;" class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div  class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <label for="end_rua">
                             Valor do lance
                         </label>
                         <input type="text" ng-model="leilao.vencedor.valor" class="form-control" id="end_rua" readonly/>
-                        <div style="background-color:6699ff;" class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div  class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <br></br>
                         </div>
                 </div>
