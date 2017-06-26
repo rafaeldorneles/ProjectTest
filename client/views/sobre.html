@@ -1,37 +1,32 @@
 <h1 id="msg">Sistema de Leilão de Serviços</h1>
 
-<h3 id="msg">Rafael Dorneles</h3>
+<h3 id="msg">Elabarado por: Rafael Espindola Dorneles De lima</h3>
+
+<h3 id="msg">Contato E-mail: rafael.bke@gmail.com</h3>
 
 
 
-<a id="diff-date" class="btn btn-large btn-primary" href="#">Date <i class="icon-calendar icon-white"></i></a>
 
-<label>Datum:</label>
-<div id="datum" class="input-append">
-     <input data-format="dd-MM-yyyy" type="text" name="datum" placeholder="Kies een     datum..." /><span class="add-on"><i data-date-icon="icon-calendar"></i></span>
-</div>
-
-                        
-                        <script>
-function countDown(secs,elem) {
-	var element = document.getElementById(elem);
-	element.innerHTML = "Please wait for "+secs+" seconds";
-	if(secs < 1) {
-		clearTimeout(timer);
-		element.innerHTML = '<h2>Countdown Complete!</h2>';
-		element.innerHTML += '<a href="#">Click here now</a>';
-	}
-	secs--;
-	var timer = setTimeout('countDown('+secs+',"'+elem+'")',1000);
-}
+<script>
+    function countDown(secs, elem) {
+        var element = document.getElementById(elem);
+        element.innerHTML = "Please wait for " + secs + " seconds";
+        if (secs < 1) {
+            clearTimeout(timer);
+            element.innerHTML = '<h2>Countdown Complete!</h2>';
+            element.innerHTML += '<a href="#">Click here now</a>';
+        }
+        secs--;
+        var timer = setTimeout('countDown(' + secs + ',"' + elem + '")', 1000);
+    }
 
 
 
 </script>
 <div align="center">
-<h1 id="msg">Por favor avalie a aplicação no link abaixo</h1>
-<font size="10"> <a  rel="stylesheet" type="text/css" href="https://goo.gl/forms/yL0YVrFeQuseHRz73">Link Para Avaliaçao Aqui!!!
-</a></font>
+    <h1 id="msg">Por favor avalie a aplicação no link abaixo</h1>
+    <font size="10"> <a  rel="stylesheet" type="text/css" href="https://goo.gl/forms/yL0YVrFeQuseHRz73">Link Para Avaliaçao Aqui!!!
+    </a></font>
 </div>
 <div id="status"></div>
-<script>countDown(10,"status");</script>
+<script>countDown(10, "status");</script>
