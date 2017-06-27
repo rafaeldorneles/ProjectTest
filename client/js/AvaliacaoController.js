@@ -10,6 +10,8 @@ app.controller('AvaliacaoController', function ($scope, $http)
         function sucessHandler(response)
         {
             alert("Avaliação Concluida");
+            window.location.href = "#/";
+          
         }
         
         console.log(avaliacao);
@@ -21,6 +23,7 @@ app.controller('AvaliacaoController', function ($scope, $http)
                     url: "/avaliacao",
                     cache: true,
                     data: avaliacao
+                    
                 };
 
         $http(config).then(sucessHandler, errorHandler);
@@ -42,6 +45,7 @@ app.controller('AvaliacaoController', function ($scope, $http)
                     responseType: "json",
                     url: "/pessoas",
                     cache: false
+                    
                 };
 
         $http(config).then(sucessHandler, errorHandler);

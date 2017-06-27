@@ -43,9 +43,10 @@ method.getWinner = function (idLeilao, dao, callback)
 {
     var moneyImportance = 0.3; //Quanto menor, mais importante 
     var winner;
-    var bestPoints;
+    //var bestPoints;
+    var menorValor;
     dao.buscarPorLeilao(idLeilao, function (err, lances)
-    {
+    {        
         for (var i = 0; i < lances.length; i++)
         {
             var interessado = lances[i].getInteressado();
@@ -54,19 +55,33 @@ method.getWinner = function (idLeilao, dao, callback)
             points = points - (valor / moneyImportance);
 
             //console.log(interessado.nome + " - " + interessado.ranking + " - " + valor + " - " + points);
-
+            
             if (!winner)
             {
-                winner = lances[i];;
-                bestPoints = points;
-            } else
+                winner = lances[i];
+                menorValor = valor;
+            }
+            else 
             {
-                if (points > bestPoints)
+                if(menorValor > valor)
                 {
                     winner = lances[i];
-                    bestPoints = points;
+                    menorValor = valor;                    
                 }
             }
+
+            //if (!winner)
+            //{
+            //    winner = lances[i];;
+            //    bestPoints = points;
+            //} else
+            //{
+            //    if (points > bestPoints)
+            //    {
+            //        winner = lances[i];
+            //        bestPoints = points;
+            //    }
+            //}
         }
 
         //console.log(winner);

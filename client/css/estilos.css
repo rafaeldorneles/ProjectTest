@@ -8,7 +8,6 @@ and open the template in the editor.
     Author     : allis
 */
 
-
 .row{
     margin: 0;
     padding: 0;
@@ -91,7 +90,7 @@ h3,h1{
 
 #logout{
     color: #d75a4a;
-    padding-right: 15px;
+    padding-right: 25px;
     padding-top: 10px;
 }
 
@@ -104,5 +103,10 @@ h3,h1{
 #logon{
     color: #006df0;
     padding-right: 15px;
+    padding-top: 10px;
+}
+
+.leilaoNovo {
+    padding-right: 35px;
     padding-top: 10px;
 }

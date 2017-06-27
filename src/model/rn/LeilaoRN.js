@@ -9,18 +9,18 @@ function LeilaoRN()
     this.errorGenerator = new ErrorGenerator();
 }
 
-method.cadastrar = function (leilao, dao, usuario,callback)
+method.cadastrar = function (leilao, dao, usuario, callback)
 {
     leilao.setEncerrado(false);
-    
+
     if (isNull(leilao, callback, this.errorGenerator))
         return;
 
     if (!isNumber(leilao, callback, this.errorGenerator))
         return;
 
-    
-  	leilao.setDono(usuario);
+
+    leilao.setDono(usuario);
 
     if ((leilao.getDataHoraFinal() - leilao.getDataHoraInicio()) < 0)
     {
@@ -50,14 +50,14 @@ method.cadastrar = function (leilao, dao, usuario,callback)
 
 method.encerrar = function (id, lanceRn, lanceDao, dao, callback)
 {
-	lanceRn.getWinner(id, lanceDao, function(err, winner)
-	{
-	    dao.buscar(id, function(err, leilao)
-	    {
-	        leilao.setVencedor(winner);
-	        leilao.setEncerrado(true);
-	        
-	        dao.editar(leilao, function (err, dbResponse)
+    lanceRn.getWinner(id, lanceDao, function (err, winner)
+    {
+        dao.buscar(id, function (err, leilao)
+        {
+            leilao.setVencedor(winner);
+            leilao.setEncerrado(true);
+
+            dao.editar(leilao, function (err, dbResponse)
             {
                 if (callback)
                     callback(err, dbResponse);
@@ -67,14 +67,14 @@ method.encerrar = function (id, lanceRn, lanceDao, dao, callback)
                         throw err;
                 }
             });
-	    })
-	});
+        });
+    });
 };
 
 method.listar = function (dao, callback)
 {
     dao.listar(function (err, lista)
-	{
+    {
         if (callback)
             callback(err, lista);
         else
@@ -111,19 +111,19 @@ method.buscarPorDono = function (dao, id, callback)
     });
 };
 
-method.listarAbertos = function(session, dao, callback)
+method.listarAbertos = function (session, dao, callback)
 {
     var SessionManager = require("./../../util/SessionManager");
     var manager = new SessionManager();
     var userId;
-    
-    if(manager.isLogged(session))
+
+    if (manager.isLogged(session))
     {
         userId = manager.getUser(session).id;
     }
-    
+
     dao.listarAbertos(userId, function (err, lista)
-	{
+    {
         if (callback)
             callback(err, lista);
         else
@@ -154,7 +154,7 @@ method.deletar = function (leilao, dao, callback)
 
 method.editar = function (leilao, dao, callback)
 {
-    
+
     if (isNull(leilao, callback, this.errorGenerator))
         return;
 
@@ -209,10 +209,10 @@ function isNumber(leilao, callback, errorGenerator)
     }
 
     /*if (isNaN(leilao.getEndereco()))
-    {
-        errorGenerator.getNumberFieldError("endereco", callback);
-        return false;
-    }*/
+     {
+     errorGenerator.getNumberFieldError("endereco", callback);
+     return false;
+     }*/
 
     return true;
 }

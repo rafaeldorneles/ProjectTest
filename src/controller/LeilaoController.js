@@ -43,7 +43,7 @@ module.exports = function (router)
 		var LanceDAO = require("./../model/dao/LanceDAO");
 		var lanceRn = new LanceRN();
 		var lanceDao = new LanceDAO();
-        var rn = new LeilaoRN();
+                var rn = new LeilaoRN();
 		var dao = new LeilaoDAO();
 		var id = request.params.id;
 

@@ -1,5 +1,5 @@
 {
-  "name": "leilao-servicos",
+  "name": "ProjectTest",
   "version": "1.0.0",
   "description": "Web service to interact with interface for services auction.",
   "main": "App.js",

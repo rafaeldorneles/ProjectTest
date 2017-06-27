@@ -227,6 +227,7 @@ app.controller('LeilaoController', function ($scope, $http, $rootScope)
 		function  sucessHandler()
 		{
 			alert("Encerrado");
+                        location.reload();
 		}
 		var config =
 		{
